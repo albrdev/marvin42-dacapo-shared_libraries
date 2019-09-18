@@ -36,12 +36,12 @@ static char _hexstr_buf[HEXSTRBUF_SIZE + 1];
 const char* hexstr(const void* const data, const size_t size)
 {
     const uint8_t* ptr = (const unsigned char*)data;
-    size_t max = min(size, HEXSTRBUF_SIZE);
+    size_t max = min(size, HEXSTRBUF_SIZE) / 2;
     size_t i;
-    for(i = 0U; i < max; i++)
+    for(i = 0U; i < max; i += 2)
     {
-        _hexstr_buf[i] += _hexchar_map[(ptr[i] & 0xF0) >> 4];
-        _hexstr_buf[i] += _hexchar_map[(ptr[i] & 0x0F)];
+        _hexstr_buf[i] = _hexchar_map[(ptr[i] & 0xF0) >> 4];
+        _hexstr_buf[i + 1] = _hexchar_map[(ptr[i] & 0x0F)];
     }
 
     _hexstr_buf[i] = '\0';
