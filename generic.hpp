@@ -5,6 +5,9 @@
 #include <stdlib.h> /* size_t */
 #ifdef __AVR__
 #include <SoftwareSerial.h>
+#else
+#define min(a, b) ((a) < (b) ? (a) : (b))
+#define max(a, b) ((a) > (b) ? (a) : (b))
 #endif
 
 #ifdef __AVR__
