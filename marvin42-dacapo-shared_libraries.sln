@@ -1,0 +1,15 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "marvin42-dacapo-shared_libraries", "marvin42-dacapo-shared_libraries.vcxitems", "{500F7D18-9E9E-4ED6-86B8-45FE948312DF}"
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F2E5B934-61EA-4B0A-98D5-4B11DCD28185}
+	EndGlobalSection
+EndGlobal
