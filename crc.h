@@ -10,7 +10,7 @@ extern "C"
 #endif
     uint16_t mkcrc16(const void* const data, const size_t size);
 #ifdef __cplusplus
-} // extern "C"
+} /* extern "C" */
 #endif
 
-#endif // __CRC_H__
+#endif /* __CRC_H__ */

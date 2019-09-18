@@ -28,7 +28,7 @@ extern "C"
 #endif
     void packet_mkmotorrun(struct _packet_motorrun *const pkt, const float left, const float right);
 #ifdef __cplusplus
-} // extern "C"
+} /* extern "C" */
 #endif
 
-#endif // __CUSTOM_PACKETS_H__
+#endif /* __CUSTOM_PACKETS_H__ */

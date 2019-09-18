@@ -30,7 +30,7 @@ extern "C"
     void packet_mkheader(struct _packet_header *const pkt, const size_t size, const uint8_t type);
     void packet_mkbasic(void *const pkt, const uint8_t type);
 #ifdef __cplusplus
-} // extern "C"
+} /* extern "C" */
 #endif
 
-#endif // __PACKET_H__
+#endif /* __PACKET_H__ */
