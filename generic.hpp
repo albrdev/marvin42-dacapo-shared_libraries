@@ -1,5 +1,5 @@
-#ifndef __GENERIC_H__
-#define __GENERIC_H__
+#ifndef __GENERIC_HPP__
+#define __GENERIC_HPP__
 
 #include <stdint.h> /* uint8_t, uint16_t */
 #include <stdlib.h> /* size_t */
@@ -21,4 +21,4 @@ extern "C"
 } // extern "C"
 #endif
 
-#endif // __GENERIC_H__
+#endif // __GENERIC_HPP__
