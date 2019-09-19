@@ -36,7 +36,7 @@ static char _hexstr_buf[HEXSTRBUF_SIZE + 1];
 const char* hexstr(const void* const data, const size_t size)
 {
     const uint8_t* ptr = (const unsigned char*)data;
-    size_t max = min(size, HEXSTRBUF_SIZE) / 2;
+    size_t max = min(size, HEXSTRBUF_SIZE / 2);
     size_t i;
     for(i = 0U; i < max; i += 2)
     {
