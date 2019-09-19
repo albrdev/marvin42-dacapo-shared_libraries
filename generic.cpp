@@ -38,7 +38,7 @@ const char* hexstr(const void* const data, const size_t size)
     const uint8_t* ptr = (const unsigned char*)data;
     size_t max = min(size, HEXSTRBUF_SIZE / 2);
     size_t j = 0U;
-    for(size_t i = 0U, j = 0U; i < max; i++)
+    for(size_t i = 0U; i < max; i++)
     {
         _hexstr_buf[j] = _hexchar_map[(ptr[i] & 0xF0) >> 4];
         j++;
