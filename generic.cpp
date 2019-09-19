@@ -6,7 +6,7 @@
 #endif
 
 #ifdef __AVR__
-static char _format_buf[128 + 1];
+static char _format_buf[256 + 1];
 int spprintf(const char* const fmt, ...)
 {
     va_list args;
@@ -30,7 +30,7 @@ int spprintf(SoftwareSerial& serialPort, const char* const fmt, ...)
 }
 #endif
 
-#define HEXSTRBUF_SIZE 64
+#define HEXSTRBUF_SIZE 128
 char const _hexchar_map[16] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
 static char _hexstr_buf[HEXSTRBUF_SIZE + 1];
 const char* hexstr(const void* const data, const size_t size)
