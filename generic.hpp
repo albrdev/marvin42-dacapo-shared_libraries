@@ -10,6 +10,11 @@
 #define max(a, b) ((a) > (b) ? (a) : (b))
 #endif
 
+#define normalize01(x, min, max) (((x) - (min)) / ((max) - (min)))                          // (x - min) / (max - min)
+#define normalize11(x, min, max) (((x) - (((min) + (max)) / 2)) / (((max) - (min)) / 2))    // (x - ((min + max) / 2)) / ((max - min) / 2)
+#define denormalize01(x, min, max) (((x) * ((max) - (min))) + (min))                        // (x * ((max) - min)) + (min)
+#define denormalize11(x, min, max) (((x) + (((min) + (max)) / 2)) * (((max) - (min)) / 2))  // (x + ((min + max) / 2)) * ((max - min) / 2)
+
 #ifdef __AVR__
 int spprintf(const char* const fmt, ...);
 int spprintf(SoftwareSerial& serialPort, const char* const fmt, ...);
