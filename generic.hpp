@@ -10,6 +10,10 @@
 #define max(a, b) ((a) > (b) ? (a) : (b))
 #endif
 
+#define clamp(x, a, b) ((x) < (a) ? (a) : ((x) > (b) ? (b) : (x)))  // x < a ? a : (x > b ? b : x)
+#define clamp01(x) ((x) < 0.0 ? 0.0 : ((x) > 1.0 ? 1.0 : (x)))      // x < 0.0 ? 0.0 : (x > 1.0 ? 1.0 : x)
+#define clamp11(x) ((x) < -1.0 ? -1.0 : ((x) > 1.0 ? 1.0 : (x)))    // x < -1.0 ? -1.0 : (x > 1.0 ? 1.0 : x)
+
 #define normalize01(x, min, max) (((x) - (min)) / ((max) - (min)))                          // (x - min) / (max - min)
 #define normalize11(x, min, max) (((x) - (((min) + (max)) / 2)) / (((max) - (min)) / 2))    // (x - ((min + max) / 2)) / ((max - min) / 2)
 #define denormalize01(x, min, max) (((x) * ((max) - (min))) + (min))                        // (x * ((max) - min)) + (min)
