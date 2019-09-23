@@ -18,11 +18,15 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)custom_packets.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)generic.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)packet.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Vector2.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Vector3.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)crc.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)custom_packets.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)generic.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)packet.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Vector2.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Vector3.hpp" />
   </ItemGroup>
 </Project>
