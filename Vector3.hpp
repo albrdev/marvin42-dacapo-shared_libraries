@@ -9,6 +9,7 @@ public:
     const static Vector3 Zero;
     const static Vector3 One;
 
+    static float Distance(const Vector3& a, const Vector3& b);
     static float DotProduct(const Vector3& a, const Vector3& b);
     static Vector3 CrossProduct(const Vector3& a, const Vector3& b);
 
@@ -41,5 +42,7 @@ public:
     float GetZ(void) const;
 
     Vector3(const float x, const float y, const float z);
+    Vector3(const Vector2& other);
+    Vector3(const Vector3& other);
     Vector3(void);
 };

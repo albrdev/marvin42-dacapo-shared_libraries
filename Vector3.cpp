@@ -1,7 +1,13 @@
 #include "Vector3.hpp"
+#include <cmath>
 
 const Vector3 Vector3::Zero(0.0f, 0.0f, 0.0f);
 const Vector3 Vector3::One(1.0f, 1.0f, 1.0f);
+
+float Vector3::Distance(const Vector3& a, const Vector3& b)
+{
+    return (float)sqrt((a - b).GetMagnitude());
+}
 
 float Vector3::DotProduct(const Vector3& a, const Vector3& b)
 {
@@ -162,5 +168,13 @@ Vector3::Vector3(const float x, const float y, const float z) : Vector2(x, y)
 {
     m_Z = z;
 }
+
+Vector3::Vector3(const Vector2& other)
+{
+    m_X = other.GetX();
+    m_Y = other.GetY();
+}
+
+Vector3::Vector3(const Vector3& other) : Vector3(other.m_X, other.m_Y, other.m_Z) { }
 
 Vector3::Vector3(void) : Vector2() { }
