@@ -8,3 +8,11 @@ void packet_mkmotorrun(struct _packet_motorrun *const pkt, const float left, con
 
     packet_mkheader(&pkt->header, sizeof(*pkt), CPT_MOTORRUN);
 }
+
+void packet_mkmotorjsdata(struct _packet_motorjsdata* const pkt, const float balance, const int8_t direction)
+{
+    memcpy(&pkt->balance, &balance, sizeof(pkt->balance));
+    memcpy(&pkt->direction, &direction, sizeof(pkt->direction));
+
+    packet_mkheader(&pkt->header, sizeof(*pkt), CPT_MOTORJSDATA);
+}
