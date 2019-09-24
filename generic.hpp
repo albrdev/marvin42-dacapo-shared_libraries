@@ -17,7 +17,7 @@
 #define normalize01(x, min, max) (((x) - (min)) / ((max) - (min)))                          // (x - min) / (max - min)
 #define normalize11(x, min, max) (((x) - (((min) + (max)) / 2)) / (((max) - (min)) / 2))    // (x - ((min + max) / 2)) / ((max - min) / 2)
 #define denormalize01(x, min, max) (((x) * ((max) - (min))) + (min))                        // (x * ((max) - min)) + (min)
-#define denormalize11(x, min, max) (denormalize01(((x) + 1) / 2, min, max))  // (x + ((min + max) / 2)) * ((max - min) / 2)
+#define denormalize11(x, min, max) (denormalize01(((x) + 1) / 2, (min), (max)))             // denormalize01((x + 1) / 2, min, max)
 
 #ifdef __AVR__
 int spprintf(const char* const fmt, ...);
