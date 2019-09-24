@@ -35,7 +35,7 @@ static char const _hexchar_map[16] = { '0', '1', '2', '3', '4', '5', '6', '7', '
 static char _hexstr_buf[HEXSTRBUF_SIZE + 1];
 const char* hexstr(const void* const data, const size_t size)
 {
-    const uint8_t* const ptr = (const uint8_t* const)data;
+    const uint8_t* const ptr = (const uint8_t*)data;
     size_t max = min(size, HEXSTRBUF_SIZE / 2);
     size_t j = 0U;
     for(size_t i = 0U; i < max; i++)
