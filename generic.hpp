@@ -10,6 +10,9 @@
 #define max(a, b) ((a) > (b) ? (a) : (b))
 #endif
 
+#define _abs(x) ((x) < 0 ? -(x) : (x))  // x < 0 ? -x : x
+#define absdiff(a, b) (_abs((a) - (b))) // _abs(a - b)
+
 #define clamp(x, a, b) ((x) < (a) ? (a) : ((x) > (b) ? (b) : (x)))  // x < a ? a : (x > b ? b : x)
 #define clamp01(x) ((x) < 0.0 ? 0.0 : ((x) > 1.0 ? 1.0 : (x)))      // x < 0.0 ? 0.0 : (x > 1.0 ? 1.0 : x)
 #define clamp11(x) ((x) < -1.0 ? -1.0 : ((x) > 1.0 ? 1.0 : (x)))    // x < -1.0 ? -1.0 : (x > 1.0 ? 1.0 : x)
