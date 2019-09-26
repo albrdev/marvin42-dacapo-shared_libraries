@@ -4,6 +4,7 @@
 #include <stdint.h> /* uint8_t, uint16_t */
 #include <stdlib.h> /* size_t */
 #ifdef __AVR__
+#include <Arduino.h>
 #include <SoftwareSerial.h>
 #else
 #define min(a, b) ((a) < (b) ? (a) : (b))
@@ -21,6 +22,16 @@
 #define normalize11(x, min, max) (((x) - (((min) + (max)) / 2)) / (((max) - (min)) / 2))    // (x - ((min + max) / 2)) / ((max - min) / 2)
 #define denormalize01(x, min, max) (((x) * ((max) - (min))) + (min))                        // (x * ((max) - min)) + (min)
 #define denormalize11(x, min, max) (denormalize01(((x) + 1) / 2, (min), (max)))             // denormalize01((x + 1) / 2, min, max)
+
+#define NOP ((void)0)
+
+#ifdef AVR_DEBUG
+#define PrintDebug(x) Serial.print(x)
+#define PrintDebugLine(x) Serial.println(x)
+#else
+#define PrintDebug(x) NOP
+#define PrintDebugLine(x) NOP
+#endif
 
 #ifdef __AVR__
 int spprintf(const char* const fmt, ...);
