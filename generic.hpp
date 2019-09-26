@@ -25,12 +25,14 @@
 
 #define NOP ((void)0)
 
-#ifdef AVR_DEBUG
-#define PrintDebug(x) Serial.print(x)
-#define PrintDebugLine(x) Serial.println(x)
-#else
-#define PrintDebug(x) NOP
-#define PrintDebugLine(x) NOP
+#ifdef __AVR__
+    #ifdef AVR_DEBUG
+    #define PrintDebug(x) Serial.print(x)
+    #define PrintDebugLine(x) Serial.println(x)
+    #else
+    #define PrintDebug(x) NOP
+    #define PrintDebugLine(x) NOP
+    #endif
 #endif
 
 #ifdef __AVR__
