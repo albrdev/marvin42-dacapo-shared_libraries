@@ -1,8 +1,9 @@
 #ifndef __GENERIC_HPP__
 #define __GENERIC_HPP__
 
-#include <stdint.h> /* uint8_t, uint16_t */
 #include <stdlib.h> /* size_t */
+#include <stdio.h>
+#include <stdint.h> /* uint8_t, uint16_t */
 #ifdef __AVR__
 #include <Arduino.h>
 #include <SoftwareSerial.h>
@@ -27,11 +28,19 @@
 
 #if defined(__AVR__) || defined(ESP8266)
     #ifdef M42_DEBUG
-    #define PrintDebug(x) Serial.print(x)
-    #define PrintDebugLine(x) Serial.println(x)
+    #define PrintDebug(x)       Serial.print(x)
+    #define PrintDebugLine(x)   Serial.println(x)
     #else
-    #define PrintDebug(x) NOP
-    #define PrintDebugLine(x) NOP
+    #define PrintDebug(x)       NOP
+    #define PrintDebugLine(x)   NOP
+    #endif
+#else
+    #ifdef M42_DEBUG
+    #define PrintfDebug(...)    fprintf(stderr, __VA_ARGS__)
+    #define PrintfDebug2(...)   printf(__VA_ARGS__)
+    #else
+    #define PrintfDebug(...)    NOP
+    #define PrintfDebug2(...)   NOP
     #endif
 #endif
 
