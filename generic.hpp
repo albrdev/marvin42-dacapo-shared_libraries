@@ -37,7 +37,7 @@
 #else
     #ifdef M42_DEBUG
     #define PrintfDebug(...)    fprintf(stderr, __VA_ARGS__)
-    #define PrintfDebug2(...)   printf(__VA_ARGS__)
+    #define PrintfDebug2(...)   printf(__VA_ARGS__); fflush(stdout)
     #else
     #define PrintfDebug(...)    NOP
     #define PrintfDebug2(...)   NOP
