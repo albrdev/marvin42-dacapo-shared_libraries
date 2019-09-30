@@ -7,9 +7,6 @@
     <Filter Include="packet">
       <UniqueIdentifier>{f9ff22cc-c29d-4dec-9ea0-8d70eed24683}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Vector">
-      <UniqueIdentifier>{12b98070-8bd8-4a98-ac33-2e81631747bd}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)crc.c">
@@ -22,12 +19,6 @@
       <Filter>packet</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)generic.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Vector2.cpp">
-      <Filter>Vector</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Vector3.cpp">
-      <Filter>Vector</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)crc.h">
@@ -40,11 +31,14 @@
       <Filter>packet</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)generic.hpp" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)Vector2.hpp">
-      <Filter>Vector</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)Vector3.hpp">
-      <Filter>Vector</Filter>
-    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory).gitattributes" />
+    <None Include="$(MSBuildThisFileDirectory).gitignore" />
+    <None Include="$(MSBuildThisFileDirectory)Makefile" />
+    <None Include="$(MSBuildThisFileDirectory)README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="$(MSBuildThisFileDirectory)LICENSE.txt" />
   </ItemGroup>
 </Project>

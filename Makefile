@@ -40,12 +40,6 @@ test:
 generic.o: generic.cpp generic.hpp
 	$(CPP) -c $<
 
-Vector3.o: Vector3.cpp Vector3.hpp
-	$(CPP) -c $<
-
-Vector2.o: Vector2.cpp Vector2.hpp
-	$(CPP) -c $<
-
 custom_packets.o: custom_packets.c custom_packets.h
 	$(C) -c $<
 
