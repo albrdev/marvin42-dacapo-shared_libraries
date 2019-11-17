@@ -20,15 +20,15 @@ struct __attribute__((packed)) _packet_motorrun
 {
     packet_header_t header;
 
-    uint32_t left;
-    uint32_t right;
+    single_t left;
+    single_t right;
 };
 
 struct __attribute__((packed)) _packet_motorjsdata
 {
     packet_header_t header;
 
-    uint32_t balance;
+    single_t balance;
     int8_t direction;
 };
 
@@ -36,8 +36,10 @@ struct __attribute__((packed)) _packet_motorjsdata
 extern "C"
 {
 #endif
-    void packet_mkmotorrun(struct _packet_motorrun *const pkt, const float left, const float right);
-    void packet_mkmotorjsdata(struct _packet_motorjsdata* const pkt, const float balance, const int8_t direction);
+
+void packet_mkmotorrun(struct _packet_motorrun *const pkt, const float left, const float right);
+void packet_mkmotorjsdata(struct _packet_motorjsdata* const pkt, const float balance, const int8_t direction);
+
 #ifdef __cplusplus
 } /* extern "C" */
 #endif
