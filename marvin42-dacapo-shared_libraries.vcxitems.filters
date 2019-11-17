@@ -1,38 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="crc">
-      <UniqueIdentifier>{0857cbca-25d6-482d-8105-f24515f6227b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="packet">
-      <UniqueIdentifier>{f9ff22cc-c29d-4dec-9ea0-8d70eed24683}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="$(MSBuildThisFileDirectory)crc.c">
-      <Filter>crc</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)custom_packets.c">
-      <Filter>packet</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)packet.c">
-      <Filter>packet</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)generic.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="$(MSBuildThisFileDirectory)crc.h">
-      <Filter>crc</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)custom_packets.h">
-      <Filter>packet</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)packet.h">
-      <Filter>packet</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)generic.hpp" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory).gitattributes" />
     <None Include="$(MSBuildThisFileDirectory).gitignore" />
     <None Include="$(MSBuildThisFileDirectory)Makefile" />
@@ -40,5 +8,41 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="$(MSBuildThisFileDirectory)LICENSE.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="inc">
+      <UniqueIdentifier>{626bb3b1-b6f1-439d-94b5-dd0e4fc94d11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{ecbd93a4-1829-450d-ab1e-e7237a211e32}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\crc.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\custom_packets.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\generic.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\packet.c">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)inc\crc.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)inc\custom_packets.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)inc\generic.hpp">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)inc\packet.h">
+      <Filter>inc</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
