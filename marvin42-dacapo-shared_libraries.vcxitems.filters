@@ -44,5 +44,8 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)inc\packet.h">
       <Filter>inc</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)inc\maths.h">
+      <Filter>inc</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
