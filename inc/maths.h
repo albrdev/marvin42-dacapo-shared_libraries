@@ -4,9 +4,11 @@
 #ifdef __AVR__
 #include <Arduino.h>
 #else
-#define min(a, b) ((a) < (b) ? (a) : (b))
-#define max(a, b) ((a) > (b) ? (a) : (b))
+#define min(a, b) ((a) < (b) ? (a) : (b))   // a < b ? a : b
+#define max(a, b) ((a) > (b) ? (a) : (b))   // a > b ? a : b
 #endif
+
+#define sgn(x) (((x) > 0) - ((x) < 0))  // (x > 0) - (x < 0)
 
 #define _abs(x) ((x) < 0 ? -(x) : (x))  // x < 0 ? -x : x
 #define absdiff(a, b) (_abs((a) - (b))) // _abs(a - b)
