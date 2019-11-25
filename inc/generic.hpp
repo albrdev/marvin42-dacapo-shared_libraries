@@ -14,6 +14,8 @@
 #define NOP ((void)0)
 
 #if defined(__AVR__) || defined(ESP8266)
+    #define ANALOG_MAX          ((1 << 10) - 1)
+
     #ifdef M42_DEBUG
     #define PrintDebug(x)       Serial.print(x)
     #define PrintDebugLine(x)   Serial.println(x)
