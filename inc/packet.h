@@ -4,8 +4,12 @@
 #include <stddef.h> /* size_t */
 #include <stdint.h> /* uint8_t, uint16_t */
 
-typedef float single_t;
 typedef struct _packet_header packet_header_t;
+
+typedef float single_t;
+typedef struct _vector2data vector2data_t;
+typedef struct _vector3data vector3data_t;
+typedef struct _quaterniondata quaterniondata_t;
 
 enum PacketType
 {
@@ -20,6 +24,27 @@ struct __attribute__((packed)) _packet_header
     uint16_t chksum_data;
     uint8_t type;
     uint16_t size;
+};
+
+struct __attribute__((packed)) _vector2data
+{
+    single_t x;
+    single_t y;
+};
+
+struct __attribute__((packed)) _vector3data
+{
+    single_t x;
+    single_t y;
+    single_t z;
+};
+
+struct __attribute__((packed)) _quaterniondata
+{
+    single_t w;
+    single_t x;
+    single_t y;
+    single_t z;
 };
 
 #ifdef __cplusplus

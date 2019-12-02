@@ -19,15 +19,14 @@ void packet_mkheader(struct _packet_header *const pkt, const size_t size, const 
        Checksum can't be taken into account for the checksum itself, therefore start at an offset to avoid it
        The length of the data to be calculated over is now total size minus the checksum size to avoid going outside allowed memory
 
-       Packet in bits: C = checksum, T = type, D = data (size may vary)
-       CCCCCCCCCCCCCCCCTTTTTTTTDDDDDDDDDDDDDDDD
+       Packet in bits: C = header checksum, c = data checksum, T = type, S = data size, D = data (size may vary)
+       CCCCCCCCCCCCCCCCccccccccccccccccTTTTTTTTSSSSSSSSSSSSSSSSDDDDDDDDDDDDDDDD...
                        ^---------------------->| size - sizeof(checksum)
     */
 
     pkt->type = type;
     pkt->size = (uint16_t)(size - sizeof(struct _packet_header));
     pkt->chksum_data = mkcrc16((uint8_t *)pkt + sizeof(*pkt), pkt->size);
-    pkt->chksum_header = 0U;
     pkt->chksum_header = mkcrc16((uint8_t *)pkt + sizeof(pkt->chksum_header), sizeof(*pkt) - sizeof(pkt->chksum_header));
 }
 
