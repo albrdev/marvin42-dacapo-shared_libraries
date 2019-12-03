@@ -9,9 +9,9 @@ void packet_mkmotorrun(struct _packet_motorrun *const pkt, const single_t left, 
     packet_mkheader(&pkt->header, sizeof(*pkt), CPT_MOTORRUN);
 }
 
-void packet_mkmotorrun2(struct _packet_motorrun2* const pkt, const vector2data_t direction, const single_t power)
+void packet_mkmotorrun2(struct _packet_motorrun2* const pkt, const vector2data_t* const direction, const single_t power)
 {
-    memcpy(&pkt->direction, &direction, sizeof(pkt->direction));
+    memcpy(&pkt->direction, direction, sizeof(pkt->direction));
     memcpy(&pkt->power, &power, sizeof(pkt->power));
 
     packet_mkheader(&pkt->header, sizeof(*pkt), CPT_MOTORRUN2);
