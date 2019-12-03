@@ -1,20 +1,34 @@
 #include "custom_packets.h"
 #include "crc.h"
 
-void packet_mkmotorrun(struct _packet_motorrun *const pkt, const single_t left, const single_t right)
+void packet_mkmotorbalance(struct _packet_motorbalance* const pkt, const single_t left, const single_t right)
 {
     memcpy(&pkt->left, &left, sizeof(pkt->left));
     memcpy(&pkt->right, &right, sizeof(pkt->right));
 
-    packet_mkheader(&pkt->header, sizeof(*pkt), CPT_MOTORRUN);
+    packet_mkheader(&pkt->header, sizeof(*pkt), CPT_MOTORBALANCE);
 }
 
-void packet_mkmotorrun2(struct _packet_motorrun2* const pkt, const vector2data_t* const direction, const single_t power)
+void packet_mkdirection(struct _packet_direction* const pkt, const vector2data_t* const direction)
+{
+    memcpy(&pkt->direction, direction, sizeof(pkt->direction));
+
+    packet_mkheader(&pkt->header, sizeof(*pkt), CPT_DIRECTION);
+}
+
+void packet_mkmotorpower(struct _packet_motorpower* const pkt, const single_t power)
+{
+    memcpy(&pkt->power, &power, sizeof(pkt->power));
+
+    packet_mkheader(&pkt->header, sizeof(*pkt), CPT_MOTORPOWER);
+}
+
+void packet_mkmotorrun(struct _packet_motorrun2* const pkt, const vector2data_t* const direction, const single_t power)
 {
     memcpy(&pkt->direction, direction, sizeof(pkt->direction));
     memcpy(&pkt->power, &power, sizeof(pkt->power));
 
-    packet_mkheader(&pkt->header, sizeof(*pkt), CPT_MOTORRUN2);
+    packet_mkheader(&pkt->header, sizeof(*pkt), CPT_MOTORRUN);
 }
 
 void packet_mkorientationdata(struct _packet_orientationdata* const pkt, const single_t velocity, const single_t w, const single_t x, const single_t y, const single_t z)
