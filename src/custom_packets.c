@@ -23,7 +23,7 @@ void packet_mkmotorpower(struct _packet_motorpower* const pkt, const single_t po
     packet_mkheader(&pkt->header, sizeof(*pkt), CPT_MOTORPOWER);
 }
 
-void packet_mkmotorrun(struct _packet_motorrun2* const pkt, const vector2data_t* const direction, const single_t power)
+void packet_mkmotorrun(struct _packet_motorrun* const pkt, const vector2data_t* const direction, const single_t power)
 {
     memcpy(&pkt->direction, direction, sizeof(pkt->direction));
     memcpy(&pkt->power, &power, sizeof(pkt->power));
