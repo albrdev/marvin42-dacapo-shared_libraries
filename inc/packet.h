@@ -1,8 +1,8 @@
 #ifndef __PACKET_H__
 #define __PACKET_H__
 
-#include <stddef.h> /* size_t */
-#include <stdint.h> /* uint8_t, uint16_t */
+#include <string.h>
+#include <stdint.h>
 
 typedef struct _packet_header packet_header_t;
 
@@ -15,7 +15,8 @@ enum PacketType
 {
     PT_FALSE    = 0,
     PT_TRUE     = 1,
-    PT_MAX      = 2
+    PT_DEBUG    = 2,
+    PT_MAX      = 3
 };
 
 struct __attribute__((packed)) _packet_header
@@ -47,6 +48,14 @@ struct __attribute__((packed)) _quaterniondata
     single_t z;
 };
 
+#define DEBUG_PAYLOAD_SIZE  128
+struct __attribute__((packed)) _packet_debug
+{
+    packet_header_t header;
+
+    uint8_t payload[DEBUG_PAYLOAD_SIZE];
+};
+
 #ifdef __cplusplus
 extern "C"
 {
@@ -54,8 +63,11 @@ extern "C"
 
 int packet_verifyheader(const struct _packet_header *const pkt);
 int packet_verifydata(const void *const pkt);
+
 void packet_mkheader(struct _packet_header *const pkt, const size_t size, const uint8_t type);
 void packet_mkbasic(void *const pkt, const uint8_t type);
+
+void packet_mkdebug(struct _packet_debug* const pkt, const uint8_t* const payload, size_t size);
 
 #ifdef __cplusplus
 } /* extern "C" */
