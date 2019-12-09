@@ -75,7 +75,7 @@ extern "C"
 {
 #endif
 
-    void packet_mkmotorbalance(struct _packet_motorbalance* const pkt, const single_t left, const single_t right);
+void packet_mkmotorbalance(struct _packet_motorbalance* const pkt, const single_t left, const single_t right);
 void packet_mkdirection(struct _packet_direction* const pkt, const vector2data_t* const direction);
 void packet_mkmotorpower(struct _packet_motorpower* const pkt, const single_t power);
 void packet_mkmotorrun(struct _packet_motorrun* const pkt, const vector2data_t* const direction, const single_t power);
