@@ -42,8 +42,9 @@ void packet_mkorientationdata(struct _packet_orientationdata* const pkt, const s
     packet_mkheader(&pkt->header, sizeof(*pkt), CPT_ORIENTATIONDATA);
 }
 
-void packet_mkproximitydata(struct _packet_proximitydata* const pkt, const single_t distance, const single_t angle)
+void packet_mkproximitydata(struct _packet_proximitydata* const pkt, const uint8_t id, const single_t distance, const single_t angle)
 {
+    memcpy(&pkt->id, &id, sizeof(pkt->id));
     memcpy(&pkt->distance, &distance, sizeof(pkt->distance));
     memcpy(&pkt->angle, &angle, sizeof(pkt->angle));
 

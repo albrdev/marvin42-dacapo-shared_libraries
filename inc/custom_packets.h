@@ -66,6 +66,7 @@ struct __attribute__((packed)) _packet_proximitydata
 {
     packet_header_t header;
 
+    uint8_t id;
     single_t distance;
     single_t angle;
 };
@@ -81,7 +82,7 @@ void packet_mkmotorpower(struct _packet_motorpower* const pkt, const single_t po
 void packet_mkmotorrun(struct _packet_motorrun* const pkt, const vector2data_t* const direction, const single_t power);
 
 void packet_mkorientationdata(struct _packet_orientationdata* const pkt, const single_t velocity, const single_t w, const single_t x, const single_t y, const single_t z);
-void packet_mkproximitydata(struct _packet_proximitydata* const pkt, const single_t distance, const single_t angle);
+void packet_mkproximitydata(struct _packet_proximitydata* const pkt, const uint8_t id, const single_t distance, const single_t angle);
 
 #ifdef __cplusplus
 } /* extern "C" */
