@@ -9,6 +9,7 @@ typedef struct _packet_motorbalance packet_motorbalance_t;
 typedef struct _packet_direction packet_direction_t;
 typedef struct _packet_motorpower packet_motorpower_t;
 typedef struct _packet_motorrun packet_motorrun_t;
+typedef struct _packet_motorrotation packet_motorrotation_t;
 
 typedef struct _packet_orientationdata packet_orientationdata_t;
 typedef struct _packet_proximitydata packet_proximitydata_t;
@@ -20,6 +21,7 @@ enum CustomPacketType
     CPT_DIRECTION,
     CPT_MOTORPOWER,
     CPT_MOTORRUN,
+    CPT_MOTORROTATION,
     CPT_ORIENTATIONDATA,
     CPT_PROXIMITYDATA
 };
@@ -54,6 +56,14 @@ struct __attribute__((packed)) _packet_motorrun
     single_t power;
 };
 
+struct __attribute__((packed)) _packet_motorrotation
+{
+    packet_header_t header;
+
+    int8_t direction;
+    single_t power;
+};
+
 struct __attribute__((packed)) _packet_orientationdata
 {
     packet_header_t header;
@@ -80,6 +90,7 @@ void packet_mkmotorbalance(struct _packet_motorbalance* const pkt, const single_
 void packet_mkdirection(struct _packet_direction* const pkt, const vector2data_t* const direction);
 void packet_mkmotorpower(struct _packet_motorpower* const pkt, const single_t power);
 void packet_mkmotorrun(struct _packet_motorrun* const pkt, const vector2data_t* const direction, const single_t power);
+void packet_mkmotorrotation(struct _packet_motorrotation* const pkt, const int8_t direction, const single_t power);
 
 void packet_mkorientationdata(struct _packet_orientationdata* const pkt, const single_t velocity, const single_t w, const single_t x, const single_t y, const single_t z);
 void packet_mkproximitydata(struct _packet_proximitydata* const pkt, const uint8_t id, const single_t distance, const single_t angle);

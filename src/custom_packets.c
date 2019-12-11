@@ -31,6 +31,14 @@ void packet_mkmotorrun(struct _packet_motorrun* const pkt, const vector2data_t* 
     packet_mkheader(&pkt->header, sizeof(*pkt), CPT_MOTORRUN);
 }
 
+void packet_mkmotorrotation(struct _packet_motorrotation* const pkt, const int8_t direction, const single_t power)
+{
+    memcpy(&pkt->direction, &direction, sizeof(pkt->direction));
+    memcpy(&pkt->power, &power, sizeof(pkt->power));
+
+    packet_mkheader(&pkt->header, sizeof(*pkt), CPT_MOTORROTATION);
+}
+
 void packet_mkorientationdata(struct _packet_orientationdata* const pkt, const single_t velocity, const single_t w, const single_t x, const single_t y, const single_t z)
 {
     memcpy(&pkt->velocity, &velocity, sizeof(pkt->velocity));
