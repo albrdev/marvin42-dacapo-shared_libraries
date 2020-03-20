@@ -17,19 +17,23 @@
     #define ANALOG_MAX          ((1 << 10) - 1)
 
     #ifdef M42_DEBUG
-    #define PrintDebug(x)       Serial.print(x)
-    #define PrintDebugLine(x)   Serial.println(x)
-    #else
-    #define PrintDebug(x)       NOP
-    #define PrintDebugLine(x)   NOP
+        #ifndef M42_DEBUGSOURCE
+            #define M42_DEBUGSOURCE Serial
+        #endif
+
+        #define PrintDebug(x)       M42_DEBUGSOURCE.print(x)
+        #define PrintDebugLine(x)   M42_DEBUGSOURCE.println(x)
+        #else
+        #define PrintDebug(x)       NOP
+        #define PrintDebugLine(x)   NOP
     #endif
 #else
     #ifdef M42_DEBUG
-    #define PrintfDebug(...)    fprintf(stderr, __VA_ARGS__)
-    #define PrintfDebug2(...)   printf(__VA_ARGS__); fflush(stdout)
-    #else
-    #define PrintfDebug(...)    NOP
-    #define PrintfDebug2(...)   NOP
+        #define PrintfDebug(...)    fprintf(stderr, __VA_ARGS__)
+        #define PrintfDebug2(...)   printf(__VA_ARGS__); fflush(stdout)
+        #else
+        #define PrintfDebug(...)    NOP
+        #define PrintfDebug2(...)   NOP
     #endif
 #endif
 
