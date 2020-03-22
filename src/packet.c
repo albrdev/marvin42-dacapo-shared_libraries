@@ -38,11 +38,11 @@ void packet_mkbasic(void *const pkt, const uint8_t type)
     packet_mkheader((struct _packet_header *const)pkt, sizeof(struct _packet_header), type);
 }
 
-void packet_mkdebug(struct _packet_debug* const pkt, const uint8_t* const payload, size_t size)
+void packet_mkunspec(struct _packet_unspec* const pkt, const uint8_t* const payload, size_t size)
 {
     size = min(size, arrcnt(pkt->payload));
     memcpy(pkt->payload, &payload, size);
 
     memset(&pkt->payload[size], 0, arrcnt(pkt->payload) - size);
-    packet_mkheader(&pkt->header, sizeof(pkt->header) + size, PT_DEBUG);
+    packet_mkheader(&pkt->header, sizeof(pkt->header) + size, PT_UNSPEC);
 }
