@@ -16,6 +16,14 @@ void packet_mkdirection(struct _packet_direction* const pkt, const vector2data_t
     packet_mkheader(&pkt->header, sizeof(*pkt), CPT_DIRECTION);
 }
 
+void packet_mkdirquat(struct _packet_dirquat* const pkt, const vector2data_t* const direction, const quaterniondata_t* const rotation)
+{
+    memcpy(&pkt->direction, direction, sizeof(pkt->direction));
+    memcpy(&pkt->rotation, rotation, sizeof(pkt->rotation));
+
+    packet_mkheader(&pkt->header, sizeof(*pkt), CPT_DIRQUAT);
+}
+
 void packet_mkmotorpower(struct _packet_motorpower* const pkt, const single_t power)
 {
     memcpy(&pkt->power, &power, sizeof(pkt->power));

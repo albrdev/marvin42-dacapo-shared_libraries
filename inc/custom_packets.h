@@ -19,6 +19,7 @@ enum CustomPacketType
     CPT_MOTORSTOP = PT_MAX,
     CPT_MOTORBALANCE,
     CPT_DIRECTION,
+    CPT_DIRQUAT,
     CPT_MOTORPOWER,
     CPT_MOTORRUN,
     CPT_MOTORROTATION,
@@ -39,6 +40,14 @@ struct __attribute__((packed)) _packet_direction
     packet_header_t header;
 
     vector2data_t direction;
+};
+
+struct __attribute__((packed)) _packet_dirquat
+{
+    packet_header_t header;
+
+    vector2data_t direction;
+    quaterniondata_t rotation;
 };
 
 struct __attribute__((packed)) _packet_motorpower
@@ -88,6 +97,7 @@ extern "C"
 
 void packet_mkmotorbalance(struct _packet_motorbalance* const pkt, const single_t left, const single_t right);
 void packet_mkdirection(struct _packet_direction* const pkt, const vector2data_t* const direction);
+void packet_mkdirquat(struct _packet_dirquat* const pkt, const vector2data_t* const direction, const quaterniondata_t* const rotation);
 void packet_mkmotorpower(struct _packet_motorpower* const pkt, const single_t power);
 void packet_mkmotorrun(struct _packet_motorrun* const pkt, const vector2data_t* const direction, const single_t power);
 void packet_mkmotorrotation(struct _packet_motorrotation* const pkt, const int8_t direction, const single_t power);
