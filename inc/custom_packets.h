@@ -7,6 +7,7 @@
 
 typedef struct _packet_motorbalance packet_motorbalance_t;
 typedef struct _packet_direction packet_direction_t;
+typedef struct _packet_dirquat packet_dirquat_t;
 typedef struct _packet_motorpower packet_motorpower_t;
 typedef struct _packet_motorrun packet_motorrun_t;
 typedef struct _packet_motorrotation packet_motorrotation_t;
