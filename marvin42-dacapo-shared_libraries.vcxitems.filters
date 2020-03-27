@@ -47,5 +47,8 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)inc\maths.h">
       <Filter>inc</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)inc\debug.hpp">
+      <Filter>inc</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

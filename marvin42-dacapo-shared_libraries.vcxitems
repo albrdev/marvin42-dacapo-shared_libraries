@@ -31,6 +31,7 @@
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)inc\crc.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)inc\custom_packets.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)inc\debug.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)inc\generic.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)inc\maths.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)inc\packet.h" />
