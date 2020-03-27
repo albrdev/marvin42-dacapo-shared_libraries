@@ -40,6 +40,9 @@ test:
 	$(CMD_PRINT) "\n"
 
 # Units
+debug.o: $(DIR_SRC)/debug.cpp $(DIR_INC)/debug.hpp
+	$(CPP) -I$(DIR_INC) -c $<
+
 generic.o: $(DIR_SRC)/generic.cpp $(DIR_INC)/generic.hpp
 	$(CPP) -I$(DIR_INC) -c $<
 
