@@ -27,10 +27,12 @@
     #define _DebugPrint(...)        M42_DEBUGSOURCE.print(__VA_ARGS__)
     #define _DebugPrintLine(...)    M42_DEBUGSOURCE.println(__VA_ARGS__)
     #define _DebugWrite(...)        M42_DEBUGSOURCE.write(__VA_ARGS__)
+    #define _DebugFlush()           M42_DEBUGSOURCE.flush()
 #else
     #define _DebugPrint(...)        fprintf(stderr, __VA_ARGS__)
     #define _DebugPrintLine(...)    do { fprintf(stderr, __VA_ARGS__); fputc('\n', stderr); } while(false)
     #define _DebugWrite(...)        fwrite(stderr, __VA_ARGS__)
+    #define _DebugFlush()           fflush(stderr)
 #endif
 
 #if (DEBUG_MODE & 0b00000001) != 0
