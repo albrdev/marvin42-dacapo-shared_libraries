@@ -32,7 +32,7 @@ extern "C"
 {
 #endif
     #ifndef HEXSTR_BUFFERSIZE
-    #define HEXSTR_BUFFERSIZE 128
+    #define HEXSTR_BUFFERSIZE 64
     #endif
     const char* hexstr(const void* const data, const size_t size);
 #ifdef __cplusplus
